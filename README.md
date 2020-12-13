@@ -4,7 +4,7 @@ This repo obviously contains my solutions for [Advent of Code](https://adventofc
 
 However, if you want to use it as a template please feel welcome to:
 * Clone the repo
-* Delete any "year" folders (`./2020` pr example)
+* Delete any "year" folders (`./2020` for example)
 * Add a folder with the current year
 * Add folders with each "day" of the Advent calendar
 
@@ -58,6 +58,8 @@ advent 3 --year 2021
 ```
 
 ## Writing your scripts:
+
+Inside every "day" folder you should have a file called `script.js`
 
 > Your scripts _should_ export a function, but if they don't they'll just be run
 when `require`d by the runner.

@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+let input = fs.readFileSync(path.join(__dirname, './input.txt')).toString('utf8');
 
 // right 3 and down 1
 let MOVEMENTS = [{
@@ -50,9 +51,6 @@ function check_slope(lines, MOVEMENT) {
 }
 
 module.exports = ({ options, variables }) => {
-	let input = fs.readFileSync(path.join(__dirname, './input.txt')).toString('utf8');
-
-
 	let lines = input.split('\n').map(line => line.split(''));
 
 	if(!('part' in options)) {
