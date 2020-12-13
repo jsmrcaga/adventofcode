@@ -1,0 +1,22 @@
+{
+  "name": "adventofcode",
+  "version": "0.0.0",
+  "description": "",
+  "main": "run.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsmrcaga/adventofcode.git"
+  },
+  "author": "Jo Colina <jo@jocolina.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsmrcaga/adventofcode/issues"
+  },
+  "homepage": "https://github.com/jsmrcaga/adventofcode#readme",
+  "dependencies": {
+    "argumentate": "^2.0.0"
+  }
+}
