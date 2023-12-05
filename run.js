@@ -20,14 +20,28 @@ if(!options.year) {
 	options.year = (new Date()).getFullYear();
 }
 
-let script = require(`./${options.year}/${options.day}/script.js`);
+const pad = str => `00${str}`.slice(-2);
+
+let script = require(`./${options.year}/${pad(options.day)}/script.js`);
+
+function log_result(result) {
+	if(result instanceof Promise) {
+		return result.then(result => {
+			console.log('Result:', result);
+		});
+	}
+
+	if(result !== undefined) {
+		console.log('Result:', result);
+	}
+}
 
 try {
 	if(script instanceof Function) {
-		let ret =script({ options, variables });
-		if(ret !== undefined) {
-			console.log('Result:', ret);
-		}
+		const ret = script({ options, variables });
+		log_result(ret);
+	} else {
+		log_result(script)
 	}
 } catch(e) {
 	console.error(e);
