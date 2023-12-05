@@ -41,6 +41,14 @@ class Game {
 		return Math.max(...color_reveals);
 	}
 
+	power() {
+		let power = 1;
+		for(const color of Object.keys(CONSTRAINTS)) {
+			power *= this.max(color);
+		}
+		return power;
+	}
+
 	is_possible(colors = {}) {
 		for(const color of Object.keys(CONSTRAINTS)) {
 			if(this.max(color) > colors[color]) {
@@ -73,9 +81,15 @@ function script() {
 	let sum = 0;
 	reader.on('line', line => {
 		const game = Game.parse_game(line);
-		if(game.is_possible(CONSTRAINTS)) {
-			sum += game.id;
-		}
+		// Step 1
+		// ------
+		// if(game.is_possible(CONSTRAINTS)) {
+		// 	sum += game.id;
+		// }
+
+		// Step 2
+		// ------
+		sum += game.power();
 	});
 
 	return new Promise((resolve, reject) => {
